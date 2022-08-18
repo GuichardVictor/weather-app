@@ -1,6 +1,7 @@
 <script lang="ts">
     import Weather from './Weather.svelte'
     import Home from './Home.svelte'
+    import Loader from './Loader.svelte'
     import {CityData, WeatherClient} from '../classes/OpenWeather';
 
     let city: string = ""
@@ -18,7 +19,7 @@
     <Home on:cityset={loadWeatherInfo}/>
 {:else}
     {#await weatherDataPromise}
-        <h1>WAITING FOR API RESPONSE</h1>
+        <Loader/>
     {:then data} 
         <Weather data={data}/>
     {:catch _}

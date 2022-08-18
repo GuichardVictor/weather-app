@@ -1,9 +1,8 @@
 import axios from 'axios'
 import type IWeatherData from '../types/WeatherData';
 
-const OPEN_WEATHER_API_KEY = import.meta.env.WEATHER_API_KEY;
+const OPEN_WEATHER_API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 const OPEN_WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather"
-
 
 function getCityCoordinates(city: string): number[] {
     // return [0.0, 0.0]
